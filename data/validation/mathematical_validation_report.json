@@ -1,0 +1,587 @@
+{
+  "validation_timestamp": "2025-08-04T08:32:08.910073",
+  "original_dataset_info": {
+    "total_measurements": 1199,
+    "extracted_valid_measurements": 1199,
+    "success_rate": 1.0
+  },
+  "mathematical_consistency": {
+    "total_measurements": 1199,
+    "consistency_checks": 1199,
+    "consistency_failures": 0,
+    "failed_measurements": []
+  },
+  "reproduced_statistics": {
+    "power_consumption_watts": {
+      "count": 1199,
+      "mean": 24.7058632959241,
+      "std": 4.133661390439122,
+      "min": 16.992200529541538,
+      "max": 33.04290156439688,
+      "median": 23.644425442450146,
+      "q25": 21.11293410297928,
+      "q75": 29.387322620353977,
+      "confidence_interval_95": [
+        24.47164954521134,
+        24.940077046636862
+      ],
+      "margin_of_error": 0.23421375071276004
+    },
+    "throughput_fps": {
+      "count": 1199,
+      "mean": 1192.1199497537593,
+      "std": 1438.3479972776813,
+      "min": 32.337413306949195,
+      "max": 6829.236380703773,
+      "median": 695.7772782946971,
+      "q25": 208.39005059132006,
+      "q75": 1591.015497403608,
+      "confidence_interval_95": [
+        1110.6229795249508,
+        1273.6169199825679
+      ],
+      "margin_of_error": 81.49697022880855
+    },
+    "efficiency_fps_per_watt": {
+      "count": 1199,
+      "mean": 45.23547020863831,
+      "std": 49.56327786340841,
+      "min": 1.5500585519122327,
+      "max": 228.25665770483226,
+      "median": 29.60113674841227,
+      "q25": 8.479955129519436,
+      "q75": 66.0705237099902,
+      "confidence_interval_95": [
+        42.42720893381376,
+        48.043731483462864
+      ],
+      "margin_of_error": 2.8082612748245515
+    },
+    "temperature_celsius": {
+      "count": 1199,
+      "mean": 81.01330275229357,
+      "std": 1.0873707092568206,
+      "min": 78.05,
+      "max": 86.0,
+      "median": 81.0
+    }
+  },
+  "peak_configurations": {
+    "peak_throughput": 6829.236380703773,
+    "peak_throughput_config": "resnet18-imagenet_cores4_batch16",
+    "peak_throughput_measurement": {
+      "model_name": "resnet18-imagenet",
+      "core_count": 4,
+      "batch_size": 16,
+      "iteration": 3,
+      "timestamp": "2025-08-03 19:08:26.983078",
+      "latency_ms": 2.3428680906709447,
+      "throughput_fps": 6829.236380703773,
+      "accuracy": 0.95,
+      "power_consumption_watts": 30.529611694034962,
+      "temperature_celsius": 80.05,
+      "memory_usage_mb": 26743.5,
+      "cpu_utilization_percent": 10.3,
+      "efficiency_fps_per_watt": 223.69221230671943,
+      "energy_per_inference_joules": 0.07152685305852904,
+      "is_valid": true,
+      "thermal_throttling": true,
+      "measurement_error": null
+    },
+    "peak_efficiency": 228.25665770483226,
+    "peak_efficiency_config": "resnet18-imagenet_cores4_batch16",
+    "peak_efficiency_measurement": {
+      "model_name": "resnet18-imagenet",
+      "core_count": 4,
+      "batch_size": 16,
+      "iteration": 30,
+      "timestamp": "2025-08-03 19:08:33.264793",
+      "latency_ms": 2.4957938799470365,
+      "throughput_fps": 6410.785813906851,
+      "accuracy": 0.95,
+      "power_consumption_watts": 28.08586561447374,
+      "temperature_celsius": 81.0,
+      "memory_usage_mb": 26746.953125,
+      "cpu_utilization_percent": 9.2,
+      "efficiency_fps_per_watt": 228.25665770483226,
+      "energy_per_inference_joules": 0.07009653151361847,
+      "is_valid": true,
+      "thermal_throttling": true,
+      "measurement_error": null
+    },
+    "config_summaries": {
+      "resnet18-imagenet_cores1_batch1": {
+        "measurement_count": 50,
+        "avg_throughput": 80.36945569581776,
+        "max_throughput": 88.70559542330007,
+        "avg_efficiency": 4.071987338029942,
+        "max_efficiency": 4.6005268757792495,
+        "avg_power": 19.77527008277734
+      },
+      "resnet18-imagenet_cores1_batch4": {
+        "measurement_count": 50,
+        "avg_throughput": 378.602629722292,
+        "max_throughput": 397.64191732325554,
+        "avg_efficiency": 18.79414091272974,
+        "max_efficiency": 22.011054798634937,
+        "avg_power": 20.201021204941092
+      },
+      "resnet18-imagenet_cores1_batch8": {
+        "measurement_count": 49,
+        "avg_throughput": 866.2405680379283,
+        "max_throughput": 924.0439688544533,
+        "avg_efficiency": 42.77348076319896,
+        "max_efficiency": 48.30563746380648,
+        "avg_power": 20.283408545994327
+      },
+      "resnet18-imagenet_cores1_batch16": {
+        "measurement_count": 50,
+        "avg_throughput": 1979.113904104653,
+        "max_throughput": 2137.9741569421913,
+        "avg_efficiency": 92.57260990830642,
+        "max_efficiency": 100.45924190743561,
+        "avg_power": 21.398639788923138
+      },
+      "resnet18-imagenet_cores2_batch1": {
+        "measurement_count": 50,
+        "avg_throughput": 149.1341018777652,
+        "max_throughput": 158.66694721644566,
+        "avg_efficiency": 6.474467863059728,
+        "max_efficiency": 7.214314007345651,
+        "avg_power": 23.052822991088973
+      },
+      "resnet18-imagenet_cores2_batch4": {
+        "measurement_count": 50,
+        "avg_throughput": 701.6327736904634,
+        "max_throughput": 776.85197159874,
+        "avg_efficiency": 30.334494135258314,
+        "max_efficiency": 33.50722511605914,
+        "avg_power": 23.155874939844935
+      },
+      "resnet18-imagenet_cores2_batch8": {
+        "measurement_count": 50,
+        "avg_throughput": 1596.3716586710757,
+        "max_throughput": 1682.8538538855387,
+        "avg_efficiency": 67.53809829829459,
+        "max_efficiency": 72.7293400116744,
+        "avg_power": 23.65037136609104
+      },
+      "resnet18-imagenet_cores2_batch16": {
+        "measurement_count": 50,
+        "avg_throughput": 3664.5285228347843,
+        "max_throughput": 3943.5293399441216,
+        "avg_efficiency": 148.7269106155162,
+        "max_efficiency": 165.32692875946532,
+        "avg_power": 24.6637359683594
+      },
+      "resnet18-imagenet_cores4_batch1": {
+        "measurement_count": 50,
+        "avg_throughput": 257.36282419192963,
+        "max_throughput": 270.0917478879115,
+        "avg_efficiency": 8.749095878804438,
+        "max_efficiency": 9.561275118588355,
+        "avg_power": 29.43894129841501
+      },
+      "resnet18-imagenet_cores4_batch4": {
+        "measurement_count": 50,
+        "avg_throughput": 1214.600573068066,
+        "max_throughput": 1304.9539875145324,
+        "avg_efficiency": 40.94250194691873,
+        "max_efficiency": 44.04787349345709,
+        "avg_power": 29.675684581796663
+      },
+      "resnet18-imagenet_cores4_batch8": {
+        "measurement_count": 50,
+        "avg_throughput": 2747.717902232772,
+        "max_throughput": 2909.119015622634,
+        "avg_efficiency": 90.9800162487049,
+        "max_efficiency": 102.63996752509779,
+        "avg_power": 30.22981536850787
+      },
+      "resnet18-imagenet_cores4_batch16": {
+        "measurement_count": 50,
+        "avg_throughput": 6322.016495592432,
+        "max_throughput": 6829.236380703773,
+        "avg_efficiency": 205.64642503516237,
+        "max_efficiency": 228.25665770483226,
+        "avg_power": 30.77851686561828
+      },
+      "resnet50-imagenet_cores1_batch1": {
+        "measurement_count": 50,
+        "avg_throughput": 34.96090037634882,
+        "max_throughput": 37.229461518799354,
+        "avg_efficiency": 1.7680391593231028,
+        "max_efficiency": 1.9530373277670041,
+        "avg_power": 19.80155690412147
+      },
+      "resnet50-imagenet_cores1_batch4": {
+        "measurement_count": 50,
+        "avg_throughput": 163.76402477507506,
+        "max_throughput": 176.26880874341302,
+        "avg_efficiency": 8.171545152636504,
+        "max_efficiency": 9.427234980018035,
+        "avg_power": 20.072864135035488
+      },
+      "resnet50-imagenet_cores1_batch8": {
+        "measurement_count": 50,
+        "avg_throughput": 374.1092658263127,
+        "max_throughput": 399.96706884236585,
+        "avg_efficiency": 18.313315386835384,
+        "max_efficiency": 19.80997163949243,
+        "avg_power": 20.44843030520351
+      },
+      "resnet50-imagenet_cores1_batch16": {
+        "measurement_count": 50,
+        "avg_throughput": 852.5618948754549,
+        "max_throughput": 914.227013237139,
+        "avg_efficiency": 39.91459690220833,
+        "max_efficiency": 43.701879809721206,
+        "avg_power": 21.38309285745756
+      },
+      "resnet50-imagenet_cores2_batch1": {
+        "measurement_count": 50,
+        "avg_throughput": 65.11686230068584,
+        "max_throughput": 69.29724791762126,
+        "avg_efficiency": 2.8516089725375107,
+        "max_efficiency": 3.175188318760854,
+        "avg_power": 22.865912108353804
+      },
+      "resnet50-imagenet_cores2_batch4": {
+        "measurement_count": 50,
+        "avg_throughput": 302.0476155604734,
+        "max_throughput": 325.2084981299725,
+        "avg_efficiency": 12.912654118475494,
+        "max_efficiency": 14.03067102868344,
+        "avg_power": 23.412144467031215
+      },
+      "resnet50-imagenet_cores2_batch8": {
+        "measurement_count": 50,
+        "avg_throughput": 687.8647066552672,
+        "max_throughput": 728.961370656032,
+        "avg_efficiency": 29.00707427208466,
+        "max_efficiency": 31.365234030586755,
+        "avg_power": 23.736020679228297
+      },
+      "resnet50-imagenet_cores2_batch16": {
+        "measurement_count": 50,
+        "avg_throughput": 1589.7035194257799,
+        "max_throughput": 1695.4866243448107,
+        "avg_efficiency": 65.3083304156929,
+        "max_efficiency": 73.24890701182021,
+        "avg_power": 24.366297188733018
+      },
+      "resnet50-imagenet_cores4_batch1": {
+        "measurement_count": 50,
+        "avg_throughput": 112.05482277956949,
+        "max_throughput": 119.35576075770155,
+        "avg_efficiency": 3.8046855437116984,
+        "max_efficiency": 4.208577467668352,
+        "avg_power": 29.47616811757649
+      },
+      "resnet50-imagenet_cores4_batch4": {
+        "measurement_count": 50,
+        "avg_throughput": 532.5927186533162,
+        "max_throughput": 572.9673751445248,
+        "avg_efficiency": 17.839803478857554,
+        "max_efficiency": 19.296794574274767,
+        "avg_power": 29.87368939621594
+      },
+      "resnet50-imagenet_cores4_batch8": {
+        "measurement_count": 50,
+        "avg_throughput": 1191.7631677869022,
+        "max_throughput": 1271.637731493614,
+        "avg_efficiency": 39.55202986685984,
+        "max_efficiency": 42.83445412471034,
+        "avg_power": 30.151525938873828
+      },
+      "resnet50-imagenet_cores4_batch16": {
+        "measurement_count": 50,
+        "avg_throughput": 2740.130297720744,
+        "max_throughput": 2912.7219306216125,
+        "avg_efficiency": 88.55413300520333,
+        "max_efficiency": 96.4023376547772,
+        "avg_power": 30.960464906991145
+      }
+    }
+  },
+  "scaling_analysis": {
+    "resnet18-imagenet_batch1": {
+      "core_performance": {
+        "1": {
+          "avg_throughput": 80.36945569581776,
+          "avg_power": 19.77527008277734,
+          "avg_efficiency": 4.071987338029942,
+          "measurement_count": 50
+        },
+        "2": {
+          "avg_throughput": 149.1341018777652,
+          "avg_power": 23.052822991088973,
+          "avg_efficiency": 6.474467863059728,
+          "measurement_count": 50
+        },
+        "4": {
+          "avg_throughput": 257.36282419192963,
+          "avg_power": 29.43894129841501,
+          "avg_efficiency": 8.749095878804438,
+          "measurement_count": 50
+        }
+      },
+      "scaling_metrics": {
+        "2": {
+          "scaling_factor": 1.855606717584449,
+          "scaling_efficiency_percent": 92.78033587922245,
+          "throughput_improvement": 85.56067175844491
+        },
+        "4": {
+          "scaling_factor": 3.20224669887023,
+          "scaling_efficiency_percent": 80.05616747175574,
+          "throughput_improvement": 220.22466988702297
+        }
+      }
+    },
+    "resnet18-imagenet_batch4": {
+      "core_performance": {
+        "1": {
+          "avg_throughput": 378.602629722292,
+          "avg_power": 20.201021204941092,
+          "avg_efficiency": 18.79414091272974,
+          "measurement_count": 50
+        },
+        "2": {
+          "avg_throughput": 701.6327736904634,
+          "avg_power": 23.155874939844935,
+          "avg_efficiency": 30.334494135258314,
+          "measurement_count": 50
+        },
+        "4": {
+          "avg_throughput": 1214.600573068066,
+          "avg_power": 29.675684581796663,
+          "avg_efficiency": 40.94250194691873,
+          "measurement_count": 50
+        }
+      },
+      "scaling_metrics": {
+        "2": {
+          "scaling_factor": 1.853216852204953,
+          "scaling_efficiency_percent": 92.66084261024766,
+          "throughput_improvement": 85.3216852204953
+        },
+        "4": {
+          "scaling_factor": 3.2081144654462252,
+          "scaling_efficiency_percent": 80.20286163615563,
+          "throughput_improvement": 220.81144654462253
+        }
+      }
+    },
+    "resnet18-imagenet_batch8": {
+      "core_performance": {
+        "1": {
+          "avg_throughput": 866.2405680379283,
+          "avg_power": 20.283408545994327,
+          "avg_efficiency": 42.77348076319896,
+          "measurement_count": 49
+        },
+        "2": {
+          "avg_throughput": 1596.3716586710757,
+          "avg_power": 23.65037136609104,
+          "avg_efficiency": 67.53809829829459,
+          "measurement_count": 50
+        },
+        "4": {
+          "avg_throughput": 2747.717902232772,
+          "avg_power": 30.22981536850787,
+          "avg_efficiency": 90.9800162487049,
+          "measurement_count": 50
+        }
+      },
+      "scaling_metrics": {
+        "2": {
+          "scaling_factor": 1.8428733513219375,
+          "scaling_efficiency_percent": 92.14366756609688,
+          "throughput_improvement": 84.28733513219375
+        },
+        "4": {
+          "scaling_factor": 3.1720032559274727,
+          "scaling_efficiency_percent": 79.30008139818682,
+          "throughput_improvement": 217.20032559274728
+        }
+      }
+    },
+    "resnet18-imagenet_batch16": {
+      "core_performance": {
+        "1": {
+          "avg_throughput": 1979.113904104653,
+          "avg_power": 21.398639788923138,
+          "avg_efficiency": 92.57260990830642,
+          "measurement_count": 50
+        },
+        "2": {
+          "avg_throughput": 3664.5285228347843,
+          "avg_power": 24.6637359683594,
+          "avg_efficiency": 148.7269106155162,
+          "measurement_count": 50
+        },
+        "4": {
+          "avg_throughput": 6322.016495592432,
+          "avg_power": 30.77851686561828,
+          "avg_efficiency": 205.64642503516237,
+          "measurement_count": 50
+        }
+      },
+      "scaling_metrics": {
+        "2": {
+          "scaling_factor": 1.8516006154242088,
+          "scaling_efficiency_percent": 92.58003077121045,
+          "throughput_improvement": 85.16006154242089
+        },
+        "4": {
+          "scaling_factor": 3.194367177392197,
+          "scaling_efficiency_percent": 79.85917943480493,
+          "throughput_improvement": 219.43671773921972
+        }
+      }
+    },
+    "resnet50-imagenet_batch1": {
+      "core_performance": {
+        "1": {
+          "avg_throughput": 34.96090037634882,
+          "avg_power": 19.80155690412147,
+          "avg_efficiency": 1.7680391593231028,
+          "measurement_count": 50
+        },
+        "2": {
+          "avg_throughput": 65.11686230068584,
+          "avg_power": 22.865912108353804,
+          "avg_efficiency": 2.8516089725375107,
+          "measurement_count": 50
+        },
+        "4": {
+          "avg_throughput": 112.05482277956949,
+          "avg_power": 29.47616811757649,
+          "avg_efficiency": 3.8046855437116984,
+          "measurement_count": 50
+        }
+      },
+      "scaling_metrics": {
+        "2": {
+          "scaling_factor": 1.8625625083940243,
+          "scaling_efficiency_percent": 93.1281254197012,
+          "throughput_improvement": 86.25625083940243
+        },
+        "4": {
+          "scaling_factor": 3.2051469376736934,
+          "scaling_efficiency_percent": 80.12867344184234,
+          "throughput_improvement": 220.51469376736935
+        }
+      }
+    },
+    "resnet50-imagenet_batch4": {
+      "core_performance": {
+        "1": {
+          "avg_throughput": 163.76402477507506,
+          "avg_power": 20.072864135035488,
+          "avg_efficiency": 8.171545152636504,
+          "measurement_count": 50
+        },
+        "2": {
+          "avg_throughput": 302.0476155604734,
+          "avg_power": 23.412144467031215,
+          "avg_efficiency": 12.912654118475494,
+          "measurement_count": 50
+        },
+        "4": {
+          "avg_throughput": 532.5927186533162,
+          "avg_power": 29.87368939621594,
+          "avg_efficiency": 17.839803478857554,
+          "measurement_count": 50
+        }
+      },
+      "scaling_metrics": {
+        "2": {
+          "scaling_factor": 1.8444076223415165,
+          "scaling_efficiency_percent": 92.22038111707582,
+          "throughput_improvement": 84.44076223415165
+        },
+        "4": {
+          "scaling_factor": 3.2521960753273875,
+          "scaling_efficiency_percent": 81.30490188318468,
+          "throughput_improvement": 225.21960753273876
+        }
+      }
+    },
+    "resnet50-imagenet_batch8": {
+      "core_performance": {
+        "1": {
+          "avg_throughput": 374.1092658263127,
+          "avg_power": 20.44843030520351,
+          "avg_efficiency": 18.313315386835384,
+          "measurement_count": 50
+        },
+        "2": {
+          "avg_throughput": 687.8647066552672,
+          "avg_power": 23.736020679228297,
+          "avg_efficiency": 29.00707427208466,
+          "measurement_count": 50
+        },
+        "4": {
+          "avg_throughput": 1191.7631677869022,
+          "avg_power": 30.151525938873828,
+          "avg_efficiency": 39.55202986685984,
+          "measurement_count": 50
+        }
+      },
+      "scaling_metrics": {
+        "2": {
+          "scaling_factor": 1.838673268719897,
+          "scaling_efficiency_percent": 91.93366343599484,
+          "throughput_improvement": 83.8673268719897
+        },
+        "4": {
+          "scaling_factor": 3.1856018459061657,
+          "scaling_efficiency_percent": 79.64004614765415,
+          "throughput_improvement": 218.56018459061656
+        }
+      }
+    },
+    "resnet50-imagenet_batch16": {
+      "core_performance": {
+        "1": {
+          "avg_throughput": 852.5618948754549,
+          "avg_power": 21.38309285745756,
+          "avg_efficiency": 39.91459690220833,
+          "measurement_count": 50
+        },
+        "2": {
+          "avg_throughput": 1589.7035194257799,
+          "avg_power": 24.366297188733018,
+          "avg_efficiency": 65.3083304156929,
+          "measurement_count": 50
+        },
+        "4": {
+          "avg_throughput": 2740.130297720744,
+          "avg_power": 30.960464906991145,
+          "avg_efficiency": 88.55413300520333,
+          "measurement_count": 50
+        }
+      },
+      "scaling_metrics": {
+        "2": {
+          "scaling_factor": 1.8646194827391496,
+          "scaling_efficiency_percent": 93.23097413695749,
+          "throughput_improvement": 86.46194827391496
+        },
+        "4": {
+          "scaling_factor": 3.2139957394190497,
+          "scaling_efficiency_percent": 80.34989348547624,
+          "throughput_improvement": 221.39957394190498
+        }
+      }
+    }
+  },
+  "overall_assessment": {
+    "mathematical_consistency_rate": 100.0,
+    "data_quality": "EXCELLENT",
+    "statistical_validity": "HIGH",
+    "validation_status": "PASSED"
+  }
+}

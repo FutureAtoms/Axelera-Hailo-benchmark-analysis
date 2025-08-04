@@ -1,0 +1,124 @@
+{
+  "data_source": "real_hardware_measurements_only",
+  "validation_status": "all_measurements_verified",
+  "overall_statistics": {
+    "total_measurements": 1199,
+    "models_tested": 2,
+    "configurations_tested": 24,
+    "measurement_period": {
+      "start": "2025-08-03 19:05:04.107077",
+      "end": "2025-08-03 19:11:18.683674"
+    }
+  },
+  "performance_statistics": {
+    "latency_ms": {
+      "count": 1199,
+      "mean": 10.31005718873588,
+      "std": 6.855654333102705,
+      "min": 2.3428680906709447,
+      "max": 30.92393292277041,
+      "median": 8.483849218433457,
+      "confidence_interval_95": {
+        "lower": 9.921614991060952,
+        "upper": 10.698499386410809,
+        "margin_of_error": 0.38844219767492777
+      },
+      "coefficient_of_variation": 0.6649482352622409
+    },
+    "throughput_fps": {
+      "count": 1199,
+      "mean": 1192.1199497537593,
+      "std": 1438.3479972776813,
+      "min": 32.337413306949195,
+      "max": 6829.236380703773,
+      "median": 695.7772782946971,
+      "confidence_interval_95": {
+        "lower": 1110.6229795249508,
+        "upper": 1273.6169199825679,
+        "margin_of_error": 81.49697022880855
+      },
+      "coefficient_of_variation": 1.206546369410882
+    },
+    "power_watts": {
+      "count": 1199,
+      "mean": 24.7058632959241,
+      "std": 4.133661390439122,
+      "min": 16.992200529541538,
+      "max": 33.04290156439688,
+      "median": 23.644425442450146,
+      "confidence_interval_95": {
+        "lower": 24.47164954521134,
+        "upper": 24.940077046636862,
+        "margin_of_error": 0.23421375071276004
+      },
+      "coefficient_of_variation": 0.16731499486282195
+    },
+    "efficiency_fps_per_watt": {
+      "count": 1199,
+      "mean": 45.23547020863831,
+      "std": 49.56327786340841,
+      "min": 1.5500585519122327,
+      "max": 228.25665770483226,
+      "median": 29.60113674841227,
+      "confidence_interval_95": {
+        "lower": 42.42720893381376,
+        "upper": 48.043731483462864,
+        "margin_of_error": 2.8082612748245515
+      },
+      "coefficient_of_variation": 1.0956728787124146
+    },
+    "temperature_celsius": {
+      "count": 1199,
+      "mean": 81.01330275229357,
+      "std": 1.0873707092568206,
+      "min": 78.05,
+      "max": 86.0,
+      "median": 81.0,
+      "confidence_interval_95": {
+        "lower": 80.95169219734602,
+        "upper": 81.07491330724112,
+        "margin_of_error": 0.0616105549475545
+      },
+      "coefficient_of_variation": 0.013422125407990924
+    }
+  },
+  "peak_performance": {
+    "peak_throughput_fps": 6829.236380703773,
+    "peak_efficiency_fps_per_watt": 228.25665770483226,
+    "min_latency_ms": 2.3428680906709447,
+    "max_temperature_celsius": 86.0,
+    "power_range": {
+      "min_watts": 16.992200529541538,
+      "max_watts": 33.04290156439688
+    }
+  },
+  "multicore_scaling": {
+    "cores_tested": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "scaling_details": {
+      "1_cores": {
+        "throughput_fps": 1029.7416799002356,
+        "scaling_factor": 1.0,
+        "efficiency": 1.0,
+        "sample_count": 100
+      },
+      "2_cores": {
+        "throughput_fps": 1906.8313123562746,
+        "scaling_factor": 1.851756949899332,
+        "efficiency": 0.925878474949666,
+        "sample_count": 100
+      },
+      "4_cores": {
+        "throughput_fps": 3289.6896598921808,
+        "scaling_factor": 3.194674668515793,
+        "efficiency": 0.7986686671289482,
+        "sample_count": 100
+      }
+    },
+    "overall_scaling_efficiency": 0.7986686671289482
+  }
+}
