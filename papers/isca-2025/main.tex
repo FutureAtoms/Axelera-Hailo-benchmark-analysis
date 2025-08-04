@@ -43,7 +43,7 @@
 
 \begin{document}
 
-\title{Statistical Methodology for AI Accelerator Performance Evaluation:\\A Rigorous Comparative Analysis of Edge Computing Platforms}
+\title{Comprehensive Performance Evaluation of Axelera AI Metis Edge AI Accelerator with Statistical Validation}
 
 \author{Authors}
 \affiliation{%
@@ -55,44 +55,44 @@
 \email{authors@institution.edu}
 
 \begin{abstract}
-AI accelerator benchmarking suffers from inadequate sample sizes ($n \leq 15$) and lacks statistical rigor, creating unreliable performance comparisons for hardware selection. We introduce the first comprehensive statistical framework for AI accelerator evaluation with unprecedented sample sizes ($n = 1,199$), 95\% confidence intervals, and complete reproducibility validation.
+Reliable AI accelerator evaluation requires rigorous statistical methodology to support confident hardware selection decisions. We present a comprehensive performance evaluation of Axelera AI Metis using substantially larger sample sizes ($n = 1,199$), 95\% confidence intervals, and complete reproducibility validation.
 
-Real hardware testing of Axelera AI Metis reveals 5.0× higher peak throughput (6,829.2 FPS vs 1,365 FPS) and 97\% multi-core scaling efficiency compared to Hailo-8. Statistical analysis confirms large practical significance (Cohen's $d > 2.0$) with $>99\%$ confidence. Mathematical validation achieves 100\% consistency across all measurements with successful reproducibility within 15\% tolerance.
+Real hardware testing reveals peak throughput of 6,829.2 FPS, power efficiency up to 228.26 FPS/W, and 79.9\% multi-core scaling efficiency across four cores. Statistical analysis with >99\% power provides reliable performance characterization. Mathematical validation achieves 100\% consistency across all measurements with successful reproducibility within 15\% tolerance.
 
-Our methodology establishes new industry standards for AI accelerator benchmarking and provides the first statistically rigorous foundation for confident hardware selection decisions.
+Our methodology contributes statistical rigor to AI accelerator evaluation and provides detailed performance data for informed hardware selection decisions.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
 
-Edge AI acceleration has created urgent demand for reliable performance evaluation methodologies. However, current benchmarking practices exhibit critical limitations: 98\% of comparison studies lack statistical rigor, with typical sample sizes of $n \leq 15$ and no confidence intervals~\cite{hardware_survey2024}.
+Edge AI acceleration has created demand for reliable performance evaluation methodologies. Systematic hardware evaluation with statistical rigor is essential for comparing AI accelerator platforms objectively.
 
-This paper introduces the first comprehensive statistical framework for AI accelerator evaluation, addressing fundamental gaps through:
+This paper presents a comprehensive statistical framework for AI accelerator evaluation, addressing common limitations through:
 
 \begin{itemize}
-    \item \textbf{Large-scale sampling}: 1,199 real hardware measurements (8-80× industry improvement)
+    \item \textbf{Large-scale sampling}: 1,199 real hardware measurements across 24 configurations
     \item \textbf{Statistical rigor}: 95\% confidence intervals, effect sizes, $>99\%$ power
     \item \textbf{Complete validation}: 100\% mathematical consistency, reproducibility verification
-    \item \textbf{Real hardware testing}: Comprehensive Axelera AI Metis evaluation
+    \item \textbf{Real hardware testing}: Comprehensive Axelera AI Metis performance characterization
 \end{itemize}
 
-Our contributions establish new benchmarking standards and provide the first reliable comparative analysis enabling confident hardware selection with statistical validation.
+Our contributions provide statistical methodology and detailed performance data enabling confident hardware selection decisions.
 
 \section{Methodology Gap Analysis}
 
 \subsection{Current Practice Limitations}
 
-Literature review of 43 recent publications (2024-2025) reveals systematic methodological failures:
+Common limitations in AI accelerator evaluation include:
 
 \begin{itemize}
-    \item \textbf{Inadequate samples}: 68\% use $n \leq 15$ measurements
-    \item \textbf{No confidence intervals}: 100\% lack uncertainty quantification  
-    \item \textbf{No effect sizes}: 100\% missing practical significance assessment
-    \item \textbf{Poor reproducibility}: 95\% provide insufficient documentation
+    \item \textbf{Limited samples}: Many studies use small sample sizes
+    \item \textbf{Limited uncertainty quantification}: Confidence intervals not consistently reported
+    \item \textbf{Limited effect size analysis}: Practical significance assessment often absent
+    \item \textbf{Reproducibility challenges}: Complete documentation is uncommon
 \end{itemize}
 
-MLPerf benchmarks, while standardized, exhibit identical limitations with 5-15 measurements and no statistical analysis~\cite{mlperf2024}.
+MLPerf benchmarks provide standardized workloads with varying sample requirements (5-5000+ depending on scenario) and growing adoption of statistical validation practices~\cite{isca_benchmark2020}.
 
 \subsection{Statistical Framework Requirements}
 
@@ -295,7 +295,7 @@ Current limitations include focus on two platforms (Axelera Metis, Hailo-8) and 
 
 This work establishes the first comprehensive statistical framework for AI accelerator performance evaluation, addressing critical methodological gaps through unprecedented sample sizes (1,199 measurements), rigorous statistical analysis (95\% confidence intervals, effect sizes), and complete reproducibility validation (100\% consistency).
 
-Real hardware testing confirms Axelera AI Metis advantages (5.0× throughput, 97\% scaling efficiency) and Hailo-8 strengths (1.95× power efficiency) with large practical significance (Cohen's $d > 2.0$). Our methodology provides the statistical foundation necessary for confident hardware selection decisions and establishes new industry standards for AI accelerator benchmarking.
+Real hardware testing provides comprehensive Axelera AI Metis characterization with peak throughput of 6,829.2 FPS and 79.9\% multi-core scaling efficiency at 4 cores. Our methodology provides statistical validation framework that supports confident hardware evaluation and contributes to rigorous AI accelerator assessment practices.
 
 The open source framework enables immediate community adoption and extension, advancing the field toward reliable, statistically rigorous accelerator evaluation.
 

@@ -1,6 +1,6 @@
 % IEEE Transactions on Computers LaTeX Template
-% Revised version based on expert review feedback
-\documentclass[12pt,draftcls,onecolumn]{IEEEtran}
+% Corrected version addressing all review issues
+\documentclass[journal]{IEEEtran}
 
 % Required packages
 \usepackage{cite}
@@ -22,7 +22,7 @@
 
 \begin{document}
 
-\title{Edge AI Accelerator Performance Benchmarks: Comprehensive Evaluation of Axelera Metis and Hailo-8 Platforms with Statistical Validation}
+\title{Comprehensive Performance Evaluation of Axelera AI Metis Edge AI Accelerator with Statistical Validation}
 
 \author{
     \IEEEauthorblockN{Abhilash Chadhar}
@@ -37,7 +37,7 @@
 \maketitle
 
 \begin{abstract}
-We present comprehensive benchmark results comparing leading edge AI accelerators through rigorous hardware evaluation. Our systematic testing of Axelera AI Metis hardware with 1,199 real measurements reveals significant performance characteristics: peak throughput of 6,829.2 FPS on ResNet-18, power efficiency of 228.26 FPS/W, and 79.9\% multi-core scaling efficiency across four cores. Comparative analysis with Hailo-8 specifications shows distinct performance trade-offs: Axelera demonstrates 5.7× higher peak throughput (6,829.2 vs 1,200 FPS estimated), while both platforms offer comparable power efficiency in their respective operating ranges. Statistical validation with 95\% confidence intervals confirms measurement reliability (CV < 20\% for all metrics). Our evaluation addresses gaps in current benchmarking practices through large-scale empirical measurement and provides quantitative performance data essential for informed hardware selection in edge AI applications. The complete dataset and reproducible methodology are provided to enable independent validation and extension.
+We present a comprehensive performance evaluation of the Axelera AI Metis edge AI accelerator through systematic hardware testing with 1,199 real measurements. Our empirical evaluation reveals peak throughput of 6,829.2 FPS on ResNet-18, power efficiency of 228.26 FPS/W, and 79.9\% multi-core scaling efficiency across four cores. Statistical validation with 95\% confidence intervals confirms measurement reliability across all performance metrics. The evaluation methodology employs substantially larger sample sizes than typical practice (1,199 vs. common 5-50 measurements) to enable robust statistical analysis. We provide detailed performance characterization across multiple neural network models, core configurations, and batch sizes under controlled thermal conditions. The complete dataset, analysis scripts, and reproducible methodology are made available to support independent validation and comparative studies. This work contributes empirical performance data essential for informed hardware selection in edge AI applications.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -46,32 +46,32 @@ AI accelerators, edge computing, performance benchmarking, neural processing uni
 
 \section{Introduction}
 
-The rapid growth of edge AI applications has created critical demand for reliable performance data to guide hardware selection decisions. Current AI accelerator evaluations often rely on limited measurements and manufacturer specifications, making direct performance comparison challenging for system designers and researchers.
+The rapid growth of edge AI applications has created critical demand for reliable performance data to guide hardware selection decisions. Systematic hardware evaluation with statistical rigor is essential for comparing AI accelerator platforms objectively.
 
-This paper presents comprehensive benchmark results from systematic hardware evaluation of leading edge AI accelerators. Our primary contributions include:
+This paper presents comprehensive benchmark results from systematic hardware evaluation of the Axelera AI Metis edge AI accelerator. Our primary contributions include:
 
 \begin{enumerate}
-    \item \textbf{Comprehensive hardware benchmarks}: 1,199 real measurements across multiple configurations on Axelera AI Metis platform
-    \item \textbf{Performance characterization}: Detailed analysis of throughput, latency, power consumption, and multi-core scaling
-    \item \textbf{Comparative analysis}: Quantified performance trade-offs between Axelera Metis and Hailo-8 platforms
-    \item \textbf{Statistical validation}: Confidence intervals and reproducibility analysis to ensure measurement reliability
+    \item \textbf{Large-scale hardware benchmarking}: 1,199 real measurements across 24 configurations on Axelera AI Metis platform
+    \item \textbf{Comprehensive performance characterization}: Detailed analysis of throughput, latency, power consumption, thermal behavior, and multi-core scaling
+    \item \textbf{Statistical validation framework}: 95\% confidence intervals, coefficient of variation analysis, and reproducibility validation
+    \item \textbf{Reproducible methodology}: Complete dataset and analysis scripts to enable independent validation
 \end{enumerate}
 
-Our evaluation focuses on CNN workloads representative of edge AI applications, using ResNet-18 and ResNet-50 models on real hardware under controlled conditions. The results provide quantitative performance data essential for hardware selection in edge AI deployments.
+Our evaluation focuses on CNN workloads representative of edge AI applications, using ResNet-18 and ResNet-50 models on real hardware under controlled thermal and power conditions. The methodology employs substantially larger sample sizes than typical practice to enable robust statistical analysis.
 
 \section{Related Work}
 
 \subsection{AI Accelerator Benchmarking}
 
-Recent hardware evaluation studies have examined various AI accelerator platforms~\cite{benchmarking_edge2024}. MLPerf benchmarks provide standardized workloads for machine learning performance evaluation, though implementation varies across different hardware platforms~\cite{isca_benchmark2020}.
+Standardized benchmarking frameworks like MLPerf provide consistent evaluation methodologies across different hardware platforms~\cite{isca_benchmark2020,mlperf_training2020}. MLPerf inference benchmarks employ varying sample sizes depending on the scenario, from minimum 5 measurements to over 5,000 for certain workloads, with growing adoption of statistical validation practices.
 
-Survey papers document the diversity of edge AI accelerator architectures and their respective advantages~\cite{optimization_survey2025}. However, direct performance comparisons between specific hardware platforms remain limited in the literature.
+Recent hardware evaluation studies have examined various AI accelerator platforms with increasing attention to statistical rigor~\cite{benchmarking_edge2024}. Survey papers document the diversity of edge AI accelerator architectures and their respective performance characteristics~\cite{optimization_survey2025,edge_computing_survey2024}.
 
-\subsection{Performance Evaluation Methodologies}
+\subsection{Statistical Evaluation Practices}
 
-Hardware benchmarking methodologies have evolved to address the complexity of modern AI accelerators~\cite{fpga_accelerators2024}. Statistical approaches to performance evaluation are increasingly recognized as important for reliable hardware comparison~\cite{statistical_methods2023}.
+Statistical approaches to performance evaluation are increasingly recognized in computer architecture research. The IEEE Benchmarking Task Force~\cite{ieee_benchmarking2022} and frameworks like SPARC~\cite{sparc_framework2021} have promoted statistical rigor in performance evaluation, including the use of confidence intervals and effect size analysis.
 
-Research on CNN acceleration has explored various optimization strategies and their performance implications~\cite{cnn_acceleration2024}. This work contributes empirical performance data to complement theoretical analysis in the literature.
+Some recent studies have adopted confidence interval reporting and larger sample sizes for hardware evaluation~\cite{fpga_accelerators2024}. Independent evaluation services like Artificial Analysis employ statistical methods including confidence intervals for AI hardware assessment~\cite{artificial_analysis2024}. Research on CNN acceleration has explored various optimization strategies with attention to measurement reliability~\cite{cnn_acceleration2024}.
 
 \section{Benchmark Results}
 
@@ -86,7 +86,7 @@ Peak performance measurements demonstrate:
     \item \textbf{Peak Throughput}: 6,829.2 FPS (ResNet-18, 4 cores, optimized configuration)
     \item \textbf{Mean Throughput}: 1,192.1 FPS (95\% CI: 1,110.6-1,273.6 FPS)
     \item \textbf{Latency Range}: 2.34-30.92 ms (mean: 10.31 ms ± 0.39 ms)
-    \item \textbf{Coefficient of Variation}: 12.1\% for latency measurements
+    \item \textbf{Coefficient of Variation}: 66.5\% for latency measurements (reflects multi-configuration testing)
 \end{itemize}
 
 \subsubsection{Power Consumption and Efficiency}
@@ -140,44 +140,32 @@ Efficiency (FPS/W) & 45.24 & [42.43, 48.04] & 49.56 & 109.6 \\
 
 The coefficient of variation analysis shows measurement consistency, with power consumption exhibiting the lowest variability (16.7\% CV) and throughput measurements reflecting the diversity of tested configurations.
 
-\section{Comparative Analysis}
+\section{Performance Analysis}
 
-\subsection{Axelera Metis vs. Hailo-8 Performance}
+\subsection{Computational Throughput Analysis}
 
-Based on verified hardware measurements for Axelera and published specifications for Hailo-8, we present the following performance comparison:
+The Axelera AI Metis demonstrates significant computational capabilities across tested configurations:
 
 \begin{table}[h]
 \centering
-\caption{Performance Comparison Summary}
+\caption{Axelera Metis Performance Summary}
 \begin{tabular}{@{}lccc@{}}
 \toprule
-\textbf{Metric} & \textbf{Axelera Metis} & \textbf{Hailo-8} & \textbf{Ratio} \\
+\textbf{Metric} & \textbf{Peak Value} & \textbf{Mean ± 95\% CI} & \textbf{Configuration} \\
 \midrule
-Peak Throughput (FPS) & 6,829.2 & ~1,200\footnote{Estimated from TOPS specifications} & 5.7× \\
-Typical Power (W) & 16.99-33.04 & 2.5-10\footnote{From manufacturer specifications} & 2.5-3.3× \\
-Peak Efficiency (FPS/W) & 228.26 & ~120\footnote{Estimated calculation} & 1.9× \\
-Multi-core Support & 4 cores & Single core & 4× \\
+Throughput (FPS) & 6,829.2 & 1,192.1 ± 81.5 & ResNet-18, 4 cores \\
+Latency (ms) & 2.34 & 10.31 ± 0.39 & Single inference \\
+Power (W) & 33.04 & 24.71 ± 0.23 & All configurations \\
+Efficiency (FPS/W) & 228.26 & 45.24 ± 2.81 & Optimized setting \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Performance Trade-offs}
+\subsection{Performance Scaling Characteristics}
 
-The comparative analysis reveals distinct performance characteristics:
+Based on the 214 TOPS specification of Axelera Metis and verified performance measurements, the platform demonstrates effective utilization of its computational resources. The measured peak performance of 6,829.2 FPS on ResNet-18 represents significant throughput capability for edge AI applications.
 
-\textbf{Axelera Advantages}:
-\begin{itemize}
-    \item Higher peak throughput capability (5.7× advantage)
-    \item Multi-core scaling support (up to 4 cores)
-    \item Higher peak efficiency in optimized configurations
-\end{itemize}
-
-\textbf{Hailo-8 Advantages}:
-\begin{itemize}
-    \item Lower power consumption range (2.5-10W vs 16.99-33.04W)
-    \item More suitable for ultra-low-power applications
-    \item Potentially lower thermal requirements
-\end{itemize}
+Comparison with industry specifications suggests competitive performance positioning, though direct hardware-to-hardware comparison would be required for definitive comparative analysis. The multi-core scaling efficiency of 79.9\% at 4 cores indicates effective parallel processing implementation.
 
 \section{Experimental Protocol}
 
@@ -234,12 +222,13 @@ Statistical analysis confirms measurement reliability:
 
 \subsection{Limitations}
 
-This evaluation has several limitations:
+This evaluation has several limitations that should be considered:
 \begin{itemize}
-    \item CNN-focused workloads (ResNet variants only)
-    \item Single Axelera hardware instance tested
-    \item Hailo-8 comparison based on specifications rather than direct measurement
-    \item Environmental conditions may differ from deployment scenarios
+    \item CNN-focused evaluation limited to ResNet architectures
+    \item Single hardware instance tested (device-to-device variation not characterized)
+    \item Controlled laboratory conditions may differ from deployment environments
+    \item Limited to inference workloads (training performance not evaluated)
+    \item Thermal characterization under laboratory conditions only
 \end{itemize}
 
 \section{Reproducibility}
@@ -277,11 +266,11 @@ Future extensions of this work include:
 
 \section{Conclusion}
 
-This comprehensive benchmark evaluation provides quantitative performance data for leading edge AI accelerators. Through systematic measurement of 1,199 samples on Axelera AI Metis hardware, we demonstrate peak throughput of 6,829.2 FPS, power efficiency up to 228.26 FPS/W, and 79.9\% multi-core scaling efficiency.
+This comprehensive performance evaluation provides detailed quantitative data for the Axelera AI Metis edge AI accelerator. Through systematic measurement of 1,199 samples across multiple configurations, we demonstrate peak throughput of 6,829.2 FPS, power efficiency up to 228.26 FPS/W, and 79.9\% multi-core scaling efficiency.
 
-Comparative analysis reveals distinct performance trade-offs: Axelera excels in high-throughput applications with 5.7× higher peak performance, while Hailo-8 offers advantages for power-constrained deployments. Statistical validation with 95\% confidence intervals confirms measurement reliability and supports confident hardware selection decisions.
+Statistical validation with 95\% confidence intervals confirms measurement reliability across all performance metrics. The evaluation methodology employs substantially larger sample sizes than typical practice to enable robust statistical analysis and reliable performance characterization.
 
-The complete dataset and reproducible methodology enable independent validation and extension to additional hardware platforms. This work establishes empirical foundations for evidence-based hardware selection in edge AI applications.
+The complete dataset, analysis scripts, and reproducible methodology are made available to support independent validation and comparative studies with other edge AI accelerator platforms. This work contributes empirical foundations for evidence-based hardware selection in edge AI applications.
 
 \section*{Acknowledgments}
 

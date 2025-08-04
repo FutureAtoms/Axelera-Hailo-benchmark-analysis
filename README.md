@@ -7,28 +7,28 @@
 
 ## 📋 Abstract
 
-This repository contains the complete research analysis comparing Axelera AI Metis and Hailo-8 edge AI accelerators using unprecedented statistical rigor. Our methodology introduces the first comprehensive statistical framework for AI accelerator benchmarking, featuring **8x larger sample sizes** than industry standard, **95% confidence intervals**, and **complete reproducibility validation**.
+This repository contains comprehensive performance evaluation of the Axelera AI Metis edge AI accelerator using rigorous statistical methodology. Our evaluation employs substantially larger sample sizes than typical practice, 95% confidence intervals, and complete reproducibility validation to enable reliable performance characterization.
 
 ## 🎯 Key Contributions
 
-- **🔬 First rigorous statistical methodology** for AI accelerator comparison in academic literature
-- **📊 Unprecedented sample size**: 1,199 real hardware measurements (8-80x larger than current standards)
-- **📈 Comprehensive statistical analysis**: 95% confidence intervals, Cohen's d effect sizes, >99% statistical power
-- **✅ 100% reproducibility validation**: Complete mathematical consistency across all measurements
+- **🔬 Rigorous statistical methodology** for AI accelerator performance evaluation
+- **📊 Large-scale empirical measurement**: 1,199 real hardware measurements across 24 configurations
+- **📈 Comprehensive statistical analysis**: 95% confidence intervals, effect size analysis, >99% statistical power
+- **✅ Complete reproducibility validation**: All data, analysis scripts, and methodology provided
 - **🏆 Publication-ready research**: Formatted for IEEE Transactions on Computers, ACM TOCS, and ISCA 2025
 
 ## 📊 Key Results (Real Hardware Data)
 
 ### **Axelera AI Metis Performance**
 - **Peak Throughput**: 6,829.2 FPS (ResNet-18, 4 cores, batch 16)
-- **Peak Efficiency**: 228.26 FPS/W (ResNet-18, optimized configuration)
-- **Multi-core Scaling**: 97% efficiency at 4 cores
+- **Peak Efficiency**: 228.26 FPS/W (ResNet-18, optimized configuration)  
+- **Multi-core Scaling**: 79.9% efficiency at 4 cores (92.6% at 2 cores)
 - **Thermal Performance**: Stable operation up to 86°C
 
 ### **Statistical Validation**
-- **Sample Size**: 1,199 measurements (vs industry standard: 5-15)
+- **Sample Size**: 1,199 measurements (substantially larger than typical practice)
 - **Mathematical Consistency**: 100% validation across all calculations
-- **Statistical Power**: >99% (eliminates Type II errors)
+- **Statistical Power**: >99% (enables robust statistical inference)
 - **Confidence Level**: 95% intervals for all performance metrics
 
 ## 📁 Repository Structure
@@ -59,10 +59,10 @@ axelera-hailo-benchmark-analysis/
 ## 🔬 Methodology Highlights
 
 ### **Enhanced Statistical Framework**
-- **Large-scale sampling**: 1,199 measurements vs industry standard of 5-15
+- **Large-scale sampling**: 1,199 measurements (substantially larger than typical practice)
 - **Confidence intervals**: 95% CI for all performance metrics  
 - **Effect size analysis**: Cohen's d for practical significance assessment
-- **Power analysis**: >99% statistical power eliminating false negatives
+- **Power analysis**: >99% statistical power enabling robust inference
 
 ### **Real Hardware Testing**
 - **Device**: Axelera AI Metis (/dev/metis-0:1:0)
@@ -102,7 +102,21 @@ axelera-hailo-benchmark-analysis/
 - ✅ **Analysis scripts**: Statistical calculations and validation
 - ✅ **Hardware setup guide**: Step-by-step device configuration
 - ✅ **Validation framework**: Mathematical consistency verification
-- ✅ **Docker environment**: Reproducible analysis environment
+- ✅ **Docker environment**: Containerized reproducible analysis environment
+
+### **Quick Start with Docker**
+```bash
+# Build and run validation
+docker-compose up benchmark-analysis
+
+# Run interactive Jupyter environment
+docker-compose up jupyter
+# Access at http://localhost:8888
+
+# Manual Docker build
+docker build -t axelera-benchmark .
+docker run -v $(pwd)/outputs:/benchmark-analysis/outputs axelera-benchmark
+```
 
 ### **Validation Status**
 - **Mathematical Consistency**: 100% (all 1,199 measurements)
@@ -123,16 +137,16 @@ All measurement data, analysis scripts, and validation results are provided unde
 ## 🏆 Impact and Significance
 
 ### **Methodological Innovation**
-- **First comprehensive statistical framework** for AI accelerator benchmarking
-- **8-80x sample size improvement** over current industry practices
-- **Complete reproducibility validation** (95% of papers lack this)
-- **Statistical rigor unprecedented** in AI accelerator research
+- **Comprehensive statistical framework** for AI accelerator performance evaluation
+- **Large-scale empirical measurement** with substantially larger sample sizes
+- **Complete reproducibility validation** with all data and methods provided
+- **Statistical rigor** supporting reliable performance characterization
 
 ### **Industry Relevance**
-- **Business-critical hardware selection** with >99% confidence
-- **Performance optimization strategies** with statistical backing
-- **Benchmark methodology standardization** for the industry
-- **Cost-benefit analysis framework** for edge AI deployments
+- **Reliable hardware selection data** with statistical validation
+- **Performance optimization insights** with empirical backing
+- **Reproducible benchmark methodology** for independent validation
+- **Quantitative performance data** for edge AI deployment planning
 
 ## 📚 Citation
 

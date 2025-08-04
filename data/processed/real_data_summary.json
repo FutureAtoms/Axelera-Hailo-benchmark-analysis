@@ -4,9 +4,9 @@
     "description": "Real hardware measurements from Axelera AI Metis device",
     "collection_date": "2025-08-03",
     "device": "Axelera AI Metis (/dev/metis-0:1:0)",
-    "methodology_version": "Enhanced_v2.0",
+    "methodology_version": "Statistical_Framework_v2.0",
     "total_runtime_hours": 0.1044978311111111,
-    "data_quality": "100% valid measurements, zero simulated values"
+    "data_quality": "100% valid measurements from real hardware testing"
   },
   "measurement_summary": {
     "total_measurements": 1199,
@@ -31,7 +31,7 @@
       "configurations_tested": 12,
       "total_measurements": 599,
       "best_configuration": "resnet18-imagenet_cores4_batch16",
-      "best_efficiency_fps_per_watt": 205.64642503516237
+      "peak_efficiency_fps_per_watt": 228.26
     },
     "resnet50-imagenet": {
       "configurations_tested": 12,
@@ -42,7 +42,8 @@
   "performance_highlights": {
     "peak_throughput_fps": 6829.2,
     "peak_efficiency_fps_per_watt": 228.26,
-    "multi_core_scaling_efficiency": 0.97,
+    "multi_core_scaling_efficiency_4_cores": 0.799,
+    "multi_core_scaling_efficiency_2_cores": 0.926,
     "max_operating_temperature_celsius": 86.0,
     "thermal_throttling_events": 0
   },

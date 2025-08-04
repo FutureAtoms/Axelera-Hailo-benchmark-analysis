@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  benchmark-analysis:
+    build: .
+    image: axelera-benchmark-analysis:latest
+    container_name: benchmark-analysis
+    volumes:
+      - ./outputs:/benchmark-analysis/outputs
+      - ./validation:/benchmark-analysis/validation
+    environment:
+      - PYTHONPATH=/benchmark-analysis/src
+      - BENCHMARK_DATA_PATH=/benchmark-analysis/data
+    command: python src/validation/validate_calculations.py
+    
+  jupyter:
+    build: .
+    image: axelera-benchmark-analysis:latest
+    container_name: benchmark-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./outputs:/benchmark-analysis/outputs
+      - ./validation:/benchmark-analysis/validation
+      - ./notebooks:/benchmark-analysis/notebooks
+    environment:
+      - PYTHONPATH=/benchmark-analysis/src
+      - BENCHMARK_DATA_PATH=/benchmark-analysis/data
+    command: jupyter notebook --ip=0.0.0.0 --allow-root --no-browser --port=8888

@@ -43,7 +43,7 @@
 
 \begin{document}
 
-\title{Statistical Methodology for AI Accelerator Performance Evaluation: A Rigorous Comparative Analysis of Edge Computing Platforms}
+\title{Comprehensive Performance Evaluation of Axelera AI Metis Edge AI Accelerator with Statistical Validation}
 
 \author{Authors}
 \affiliation{%
@@ -55,9 +55,9 @@
 \email{authors@institution.edu}
 
 \begin{abstract}
-The absence of rigorous statistical methodology in AI accelerator benchmarking severely limits the reliability of performance comparisons for business-critical hardware selection. Current industry practices rely on inadequate sample sizes ($n \leq 15$) without confidence intervals or statistical significance testing, creating unreliable performance assessments. We address these fundamental limitations by introducing the first comprehensive statistical framework for AI accelerator evaluation, featuring unprecedented sample sizes ($n = 1,199$), 95\% confidence intervals, and complete reproducibility validation.
+Reliable performance evaluation of AI accelerators requires rigorous statistical methodology to support confident hardware selection decisions. We present a comprehensive performance evaluation of the Axelera AI Metis edge AI accelerator using substantially larger sample sizes than typical practice ($n = 1,199$), 95\% confidence intervals, and complete reproducibility validation.
 
-Our methodology combines large-scale real hardware testing of Axelera AI Metis with validated Hailo-8 specifications to demonstrate the critical importance of statistical rigor in accelerator comparison. Real hardware measurements reveal Axelera's 5.0× higher peak throughput (6,829.2 FPS vs 1,365 FPS) and 97\% multi-core scaling efficiency, while Hailo-8 demonstrates 1.95× better power efficiency (13.65 FPS/W vs 7.0 FPS/W). Statistical analysis confirms these differences represent large practical significance (Cohen's $d > 2.0$) with $>99\%$ statistical confidence.
+Our methodology employs systematic real hardware testing of Axelera AI Metis across 24 configurations to provide detailed performance characterization. Real hardware measurements reveal peak throughput of 6,829.2 FPS, power efficiency up to 228.26 FPS/W, and 79.9\% multi-core scaling efficiency across four cores. Statistical analysis with 95\% confidence intervals confirms measurement reliability with >99\% statistical power for robust inference.
 
 Mathematical validation achieves 100\% consistency across all 1,199 measurements, with successful reproducibility simulation within 15\% tolerance. Our framework establishes new industry standards for AI accelerator benchmarking methodology and provides the first statistically rigorous foundation for confident hardware selection decisions. All data, analysis scripts, and validation frameworks are provided as open source to enable immediate adoption across the research community.
 \end{abstract}
@@ -66,33 +66,33 @@ Mathematical validation achieves 100\% consistency across all 1,199 measurements
 
 \section{Introduction}
 
-The explosive growth of edge AI applications has created unprecedented demand for reliable AI accelerator performance evaluation. However, current benchmarking practices suffer from fundamental methodological limitations that severely compromise the reliability of hardware selection decisions. A comprehensive analysis of recent literature reveals that 98\% of AI accelerator comparison studies lack basic statistical rigor, with typical sample sizes of $n \leq 15$ measurements and no confidence interval analysis.
+The explosive growth of edge AI applications has created unprecedented demand for reliable AI accelerator performance evaluation. Systematic hardware evaluation with statistical rigor is essential for comparing AI accelerator platforms objectively and supporting confident hardware selection decisions.
 
-This crisis in benchmarking methodology has serious practical consequences. Hardware procurement decisions worth millions of dollars are based on performance comparisons that cannot reliably distinguish between measurement noise and genuine performance differences. The absence of statistical significance testing means that apparent performance advantages may simply reflect random variation rather than true hardware capabilities.
+This work addresses common limitations in AI accelerator evaluation methodology through comprehensive statistical analysis. Our approach employs substantially larger sample sizes than typical practice, statistical validation, and complete reproducibility to provide reliable performance characterization.
 
 \subsection{Problem Statement}
 
-Current AI accelerator benchmarking practices exhibit several critical limitations:
+Common limitations in AI accelerator evaluation include:
 
 \begin{itemize}
-    \item \textbf{Inadequate sample sizes}: Typical studies use $n = 5-15$ measurements, insufficient for reliable statistical inference
-    \item \textbf{No confidence intervals}: 100\% of reviewed papers lack uncertainty quantification
-    \item \textbf{No effect size analysis}: Performance differences lack practical significance assessment
-    \item \textbf{Poor reproducibility}: 95\% of studies provide insufficient reproduction documentation
-    \item \textbf{Statistical naivety}: Basic statistical principles are routinely ignored
+    \item \textbf{Limited sample sizes}: Many studies use small sample sizes that limit statistical inference
+    \item \textbf{Limited uncertainty quantification}: Confidence intervals are not consistently reported
+    \item \textbf{Limited effect size analysis}: Practical significance assessment often absent
+    \item \textbf{Reproducibility challenges}: Complete reproduction documentation is uncommon
+    \item \textbf{Statistical methodology gaps}: Opportunities for more rigorous statistical analysis
 \end{itemize}
 
-These limitations create a fundamental reliability crisis where business-critical decisions are based on statistically meaningless comparisons.
+These limitations motivate the need for more comprehensive statistical approaches to hardware evaluation.
 
 \subsection{Our Approach}
 
 We address these limitations through systematic methodological improvements:
 
 \begin{enumerate}
-    \item \textbf{Large-scale sampling}: 1,199 real hardware measurements (8-80× larger than industry standard)
-    \item \textbf{Statistical rigor}: 95\% confidence intervals, Cohen's d effect sizes, and $>99\%$ statistical power
+    \item \textbf{Large-scale sampling}: 1,199 real hardware measurements across 24 configurations
+    \item \textbf{Statistical rigor}: 95\% confidence intervals, effect size analysis, and $>99\%$ statistical power
     \item \textbf{Complete validation}: Mathematical consistency verification and reproducibility testing
-    \item \textbf{Real hardware focus}: Comprehensive Axelera AI Metis testing with validated Hailo-8 comparison
+    \item \textbf{Real hardware focus}: Comprehensive Axelera AI Metis performance characterization
 \end{enumerate}
 
 \subsection{Contributions}
@@ -100,11 +100,11 @@ We address these limitations through systematic methodological improvements:
 Our work makes several key contributions to AI accelerator research:
 
 \begin{itemize}
-    \item \textbf{First comprehensive statistical framework} for AI accelerator benchmarking
-    \item \textbf{Unprecedented empirical dataset} with 1,199 validated hardware measurements
-    \item \textbf{Rigorous comparative analysis} of leading edge AI accelerators with statistical confidence
+    \item \textbf{Comprehensive statistical framework} for AI accelerator performance evaluation
+    \item \textbf{Large-scale empirical dataset} with 1,199 validated hardware measurements
+    \item \textbf{Detailed performance characterization} of Axelera AI Metis with statistical validation
     \item \textbf{Complete reproducibility framework} enabling independent validation
-    \item \textbf{Open source methodology} for immediate community adoption
+    \item \textbf{Open methodology and data} for community use and extension
 \end{itemize}
 
 \section{Background and Related Work}
@@ -112,28 +112,14 @@ Our work makes several key contributions to AI accelerator research:
 \subsection{Current Benchmarking Landscape}
 
 \subsubsection{MLPerf Benchmarks}
-MLPerf represents the most established AI benchmarking framework, providing standardized workloads across multiple AI domains~\cite{mlperf2024}. However, MLPerf exhibits the same statistical limitations plaguing the broader field:
+MLPerf represents the most established AI benchmarking framework, providing standardized workloads across multiple AI domains~\cite{isca_benchmark2020}. MLPerf employs varying sample requirements depending on the benchmark scenario, from minimum 5 measurements to over 5,000 for certain workloads, with growing adoption of statistical validation practices.
 
-\begin{itemize}
-    \item \textbf{Minimal sample requirements}: 5-15 performance measurements
-    \item \textbf{No statistical analysis}: Results reported without confidence intervals
-    \item \textbf{No significance testing}: Performance differences lack statistical validation
-    \item \textbf{Limited reproducibility}: Environmental variation not controlled
-\end{itemize}
-
-Recent MLPerf v4.1 results included 964 performance results from 22 organizations, but without statistical framework to assess reliability or significance of reported differences.
+Recent MLPerf v4.1 results included 964 performance results from 22 organizations, demonstrating the scale and adoption of standardized AI benchmarking across the industry.
 
 \subsubsection{Academic Research}
-Our comprehensive literature review of 43 recent publications (2024-2025) reveals systematic methodological limitations:
+Academic research in AI accelerator evaluation shows diverse methodological approaches. Recent work includes comprehensive surveys of edge AI platforms~\cite{benchmarking_edge2024,edge_computing_survey2024} and empirical studies with varying sample sizes and statistical methodologies.
 
-\begin{itemize}
-    \item \textbf{Survey dominance}: 68\% are survey papers without original empirical data
-    \item \textbf{Limited sample sizes}: Empirical studies use $n = 10-30$ measurements
-    \item \textbf{Descriptive statistics only}: Mean and standard deviation without confidence intervals
-    \item \textbf{No effect size analysis}: Practical significance assessment absent
-\end{itemize}
-
-Representative examples include recent work on CNN inference acceleration~\cite{cnn_acceleration2024} using 20 measurements without statistical analysis, and edge AI platform benchmarking~\cite{benchmarking_edge2024} with 10-15 measurements per platform but no significance testing.
+Some recent studies have adopted confidence interval reporting and larger sample sizes for hardware evaluation, while others focus on theoretical analysis and architectural comparisons~\cite{cnn_acceleration2024,fpga_accelerators2024}.
 
 \subsubsection{Industry Reports}
 Commercial AI accelerator comparisons show even more limited methodology:
@@ -151,22 +137,22 @@ Our analysis reveals fundamental gaps in statistical methodology application:
 
 \begin{table}[h]
 \centering
-\caption{Statistical Methodology Gap Analysis (N=43 papers, 2024-2025)}
-\begin{tabular}{@{}lcc@{}}
+\caption{Statistical Methodology Features}
+\begin{tabular}{@{}lc@{}}
 \toprule
-\textbf{Statistical Practice} & \textbf{Current Literature} & \textbf{Our Work} \\
+\textbf{Statistical Practice} & \textbf{Our Work} \\
 \midrule
-Confidence Intervals & 0\% & 100\% \\
-Effect Size Analysis & 0\% & 100\% \\
-Power Analysis & 0\% & 100\% \\
-Reproducibility Documentation & 5\% & 100\% \\
-Sample Size Justification & 12\% & 100\% \\
-Statistical Significance Testing & 8\% & 100\% \\
+Confidence Intervals & ✓ \\
+Effect Size Analysis & ✓ \\
+Power Analysis & ✓ \\
+Reproducibility Documentation & ✓ \\
+Sample Size Justification & ✓ \\
+Large-Scale Measurement & ✓ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-This represents a systematic failure to apply established statistical principles to hardware performance evaluation, creating unreliable comparisons that cannot support confident business decisions.
+Our methodology incorporates comprehensive statistical practices to enable robust performance evaluation and reliable inference.
 
 \subsection{AI Accelerator Landscape}
 
@@ -195,7 +181,7 @@ Hailo-8 has established significant market presence in edge AI acceleration:
 Our methodology addresses critical limitations in current practices through systematic improvements based on established statistical principles.
 
 \subsubsection{Sample Size Determination}
-We implement sample sizes of $n = 50$ per configuration, totaling 1,199 measurements across all test conditions. This represents an 8× improvement over typical industry practice ($n \leq 15$) and enables:
+We implement sample sizes of $n = 50$ per configuration, totaling 1,199 measurements across all test conditions. This represents substantially larger sample sizes than typical practice and enables:
 
 \begin{itemize}
     \item Reliable confidence interval estimation with narrow bounds
@@ -349,7 +335,7 @@ Real hardware testing reveals excellent multi-core scaling efficiency:
 \end{tabular}
 \end{table}
 
-Overall multi-core scaling efficiency of 97\% represents industry-leading performance for AI accelerators.
+Multi-core scaling efficiency of 79.9\% at 4 cores demonstrates effective parallel processing capabilities.
 
 \subsubsection{Statistical Confidence Analysis}
 For the baseline ResNet-18 configuration (1 core, batch 1), our statistical analysis provides:
@@ -374,55 +360,39 @@ Low coefficients of variation (3.3-5.7\%) demonstrate excellent measurement cons
 
 \subsection{Comparative Analysis}
 
-\subsubsection{Performance Comparison Framework}
-We compare Axelera AI Metis real hardware measurements with validated Hailo-8 specifications obtained from official documentation and verified third-party testing.
+\subsubsection{Performance Characterization Summary}
+Our comprehensive evaluation provides detailed performance characterization of Axelera AI Metis:
 
 \begin{table}[h]
 \centering
-\caption{Comprehensive Performance Comparison (Real Data)}
-\begin{tabular}{@{}lccc@{}}
-\toprule
-\textbf{Metric} & \textbf{Axelera Metis} & \textbf{Hailo-8} & \textbf{Ratio (Axelera/Hailo)} \\
-\midrule
-Peak Throughput (FPS) & 6,829.2 & 1,365 & 5.0× \\
-Peak Efficiency (FPS/W) & 228.26 & 13.65 & 16.7× \\
-Multi-core Scaling & 97\% & 85\% & 1.14× \\
-Operating Power (W) & 16.5-35.2 & 10-20 & 1.6× \\
-Thermal Limit (°C) & 86 & 85 & 1.01× \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsubsection{Statistical Significance Analysis}
-Effect size analysis quantifies practical significance of performance differences:
-
-\begin{itemize}
-    \item \textbf{Throughput comparison}: Cohen's $d = 3.45$ (very large effect)
-    \item \textbf{Efficiency comparison}: Cohen's $d = 2.87$ (very large effect)
-    \item \textbf{Power consumption}: Cohen's $d = 1.23$ (large effect)
-    \item \textbf{Multi-core scaling}: Cohen's $d = 1.89$ (large effect)
-\end{itemize}
-
-All effect sizes exceed Cohen's threshold for large practical significance ($d > 0.8$), confirming meaningful performance differences with business relevance.
-
-\subsubsection{Confidence Interval Comparison}
-95\% confidence intervals provide uncertainty quantification for performance differences:
-
-\begin{table}[h]
-\centering
-\caption{Performance Difference Confidence Intervals}
+\caption{Axelera AI Metis Performance Summary}
 \begin{tabular}{@{}lcc@{}}
 \toprule
-\textbf{Metric} & \textbf{Difference} & \textbf{95\% CI} \\
+\textbf{Metric} & \textbf{Peak Value} & \textbf{Mean ± 95\% CI} \\
 \midrule
-Throughput Advantage (×) & 5.0× & [4.85×, 5.15×] \\
-Efficiency Advantage (×) & 16.7× & [15.9×, 17.5×] \\
-Power Overhead (×) & 1.6× & [1.5×, 1.7×] \\
+Throughput (FPS) & 6,829.2 & 1,192.1 ± 81.5 \\
+Latency (ms) & 2.34 & 10.31 ± 0.39 \\
+Power (W) & 33.04 & 24.71 ± 0.23 \\
+Efficiency (FPS/W) & 228.26 & 45.24 ± 2.81 \\
+Temperature (°C) & 86.0 & 81.01 ± 0.06 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Narrow confidence intervals demonstrate high precision in performance characterization with statistical confidence $>99\%$.
+\subsubsection{Statistical Analysis Results}
+Effect size analysis quantifies performance variation across configurations:
+
+\begin{itemize}
+    \item \textbf{Configuration differences}: Large effect sizes between different core/batch configurations
+    \item \textbf{Performance scaling}: Measurable differences in throughput scaling patterns
+    \item \textbf{Power characteristics}: Significant variation across operating conditions
+    \item \textbf{Efficiency patterns}: Strong configuration-dependent efficiency variations
+\end{itemize}
+
+Effect size analysis confirms meaningful performance differences across tested configurations with statistical significance.
+
+\subsubsection{Statistical Precision}
+95\% confidence intervals provide uncertainty quantification for all performance metrics. The narrow confidence intervals achieved through large sample sizes enable precise performance characterization with high statistical confidence for reliable hardware evaluation.
 
 \subsection{Validation Results}
 
@@ -475,13 +445,13 @@ This eliminates false negative results and provides reliable detection of meanin
 \subsection{Methodological Contributions}
 
 \subsubsection{Statistical Framework Innovation}
-Our work introduces the first comprehensive statistical framework for AI accelerator evaluation, addressing critical gaps in current methodology:
+Our work introduces a comprehensive statistical framework for AI accelerator evaluation, addressing limitations in current methodology:
 
 \begin{itemize}
-    \item \textbf{Sample size standardization}: 8-80× improvement enables reliable statistical inference
+    \item \textbf{Large-scale sampling}: Substantially larger sample sizes enable reliable statistical inference
     \item \textbf{Confidence interval framework}: Quantified uncertainty for informed decision-making
     \item \textbf{Effect size analysis}: Practical significance assessment beyond statistical significance
-    \item \textbf{Power analysis}: Elimination of Type II errors for meaningful comparisons
+    \item \textbf{Power analysis}: High statistical power for detecting meaningful differences
 \end{itemize}
 
 \subsubsection{Reproducibility Excellence}
@@ -510,7 +480,7 @@ Real hardware testing confirms significant performance advantages:
 Validated specifications reveal complementary advantages:
 
 \begin{itemize}
-    \item \textbf{Power efficiency}: 1.95× better efficiency for power-constrained applications
+    \item \textbf{Different power ranges}: Operates in different power envelopes for various application requirements
     \item \textbf{Lower baseline power}: Reduced minimum power consumption (10W vs 16.5W)
     \item \textbf{Mature ecosystem}: Established software development and deployment tools
     \item \textbf{Proven deployment}: Extensive production application validation
@@ -583,15 +553,15 @@ Current testing emphasizes CNN inference workloads:
 
 \section{Conclusion}
 
-This work establishes the first comprehensive statistical framework for AI accelerator performance evaluation, addressing fundamental methodological limitations that have plagued the field. Through unprecedented sample sizes (1,199 real hardware measurements), rigorous statistical analysis (95\% confidence intervals, effect sizes, power analysis), and complete reproducibility validation (100\% mathematical consistency), we provide the foundation for reliable AI accelerator comparison.
+This work establishes a comprehensive statistical framework for AI accelerator performance evaluation, addressing common methodological limitations through rigorous statistical analysis. Through large-scale sampling (1,199 real hardware measurements), statistical validation (95\% confidence intervals, effect sizes, power analysis), and complete reproducibility validation (100\% mathematical consistency), we provide reliable performance characterization.
 
-Our real hardware testing of Axelera AI Metis demonstrates exceptional performance characteristics with statistical confidence: 5.0× higher peak throughput, 97\% multi-core scaling efficiency, and industry-leading thermal stability. Comparative analysis with validated Hailo-8 specifications reveals complementary strengths, with Hailo-8 providing 1.95× better power efficiency for energy-constrained applications.
+Our real hardware testing of Axelera AI Metis demonstrates strong performance characteristics with statistical confidence: peak throughput of 6,829.2 FPS, 79.9\% multi-core scaling efficiency at 4 cores, and stable thermal operation. The comprehensive evaluation provides detailed performance data essential for informed hardware selection.
 
-The statistical framework introduced here addresses critical gaps in current benchmarking practices and establishes new industry standards for AI accelerator evaluation. Effect size analysis confirms all performance differences represent large practical significance (Cohen's $d > 2.0$) with business relevance, while confidence intervals provide quantified uncertainty for informed decision-making.
+The statistical framework introduced here addresses common limitations in benchmarking practices and contributes to more rigorous AI accelerator evaluation. Effect size analysis quantifies performance variations across configurations, while confidence intervals provide quantified uncertainty for informed decision-making.
 
-Our complete reproducibility framework, including open source data and analysis tools, enables immediate adoption and extension across the AI accelerator research community. This work provides the statistical rigor necessary for confident business-critical hardware selection decisions and establishes the methodological foundation for future AI accelerator research.
+Our complete reproducibility framework, including open data and analysis tools, enables validation and extension across the AI accelerator research community. This work provides statistical methods that support confident hardware selection decisions and contributes methodological foundations for AI accelerator research.
 
-The combination of rigorous methodology, comprehensive validation, and practical insights makes this work immediately applicable for researchers, engineers, and decision-makers working with edge AI acceleration technology. We anticipate this framework will become the standard approach for AI accelerator evaluation and comparison across the industry.
+The combination of rigorous methodology, comprehensive validation, and detailed performance data makes this work valuable for researchers, engineers, and decision-makers working with edge AI acceleration technology. The framework provides a foundation for systematic AI accelerator evaluation with statistical rigor.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
